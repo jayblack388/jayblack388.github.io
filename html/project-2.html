@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Crystal Collector Game</title>
+	<!-- CSS Reset and Bootstrap 4.0 CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/ccstyle.css">	
+</head>
+<body>
+
+<!-- 	Navbar -->
+	<div class="container">
+		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-secondary">
+
+	  <a class="navbar-brand text-light" href="../index.html">John Blackwell</a>
+
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+	    <span class="navbar-toggler-icon"></span>
+
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+	    <ul class="navbar-nav ml-auto">
+
+	      <li class="nav-item active">
+
+	        <a class="nav-link text-light" href="../index.html">About Me<span class="sr-only">(current)</span></a>
+
+	      </li>
+
+	      <li class="nav-item">
+
+	        <a class="nav-link text-light" href="./contact.html">Contact</a>
+
+	      </li>
+
+	  	   <li class="nav-item dropdown">
+
+	        <a class="nav-link dropdown-toggle text-light" href="./portfolio.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects
+	        </a>
+
+	        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+			  <a class="dropdown-item text-secondary" href="./portfolio.html">Portfolio</a>
+
+	          <div class="dropdown-divider"></div>	
+
+	          <a class="dropdown-item text-secondary" href="./project-1.html">Project 1</a>
+
+	          <a class="dropdown-item text-secondary" href="./project-2.html">Project 2</a>
+
+	          <a class="dropdown-item text-secondary" href="./project-3.html">Project 3</a>
+	          
+	          <a class="dropdown-item text-secondary" href="./project-4.html">Project 4</a>
+
+	          <a class="dropdown-item text-secondary" href="./project-5.html">Project 5</a>
+
+	          <a class="dropdown-item text-secondary" href="./project-6.html">Project 6</a>
+
+	          <div class="dropdown-divider"></div>
+
+	          <a class="dropdown-item text-secondary" href="https://jayblack388.github.io/Basic-Portfolio/index.html">This site before Bootstrap</a>
+
+	        </div>
+
+	      </li>
+
+	    </ul>
+
+	  </div>
+
+		</nav>
+	</div>
+<!--  Game -->
+	<div class="container">
+		<div class="jumbotron bg-info text-center text-light">
+			<h1>Crystal Collector Game</h1>
+		</div>
+		<div class="text-center text-light">
+			<section>
+				<p>You will get a random number at the start of the game.</p>
+				<br/>
+				<p>There are four crystals below. By clicking on a crystal you will add a set amount of points to your total score.</p>
+				<br/>
+				<p>You win the game by matching your total score to random number, you lose the game if your total score goes above the random number.</p>
+				<br/>
+				<p>The value of each crystal is hidden from you until you click on it, and will change each game.</p>
+			</section>
+		</div>
+		<div id="randomnumber-scoreboard" class="text-center text-light">
+			<div id="random-number-generator">
+				<h1>Your target score is: <span id="random-number"></span></h1>
+				
+			</div>
+
+			<div id="score-board">
+				<span id="winLoss"></span>
+				<p>Wins: <span id="win-counter">0</span></p>
+				<p>Losses: <span id="loss-counter">0</span></p>
+			</div>
+		</div>
+
+		<div id="crystal-container">
+			<div class="row text-center">	
+				<div class="col-md-1"></div>
+				<div class="col-md-10">	
+					<img class= crystals id="red" src="../assets/images/redCrystal.jpg">
+					<img class= crystals id="blue" src="../assets/images/blueCrystal.jpg">
+					<img class= crystals id="green" src="../assets/images/greenCrystal.jpg">
+					<img class= crystals id="purple" src="../assets/images/purpleCrystal.jpg">
+				</div>
+				<div class="col-md-1"></div>
+			</div>	
+		</div>
+
+		<div class="text-center text-dark" id="current-score">
+			<h1>Your total score is: <span id="current-score-counter"></span></h1>
+		</div>
+	</div>
+
+	<div class="container-fluid bg-secondary text-center" style="padding:20px">
+		<footer class="footer">
+			<span class="text-light text-weight-bold">John Blackwell &#169 2017</span>
+		</footer>
+	</div>	
+
+
+<!-- Bootstrap jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<!-- Popper.js (for Bootstrap) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<!-- Javascript plugins (for Bootstrap) -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../assets/javascript/ccGame.js"></script>
+</body>
+</html>

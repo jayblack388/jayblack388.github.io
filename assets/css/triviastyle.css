@@ -1,0 +1,50 @@
+body{
+    background: url(../images/26298.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+ul {
+    list-style: none;
+}
+li {
+    font-size: 20px;
+}
+input[type=radio] {
+    border: 0px;
+}
+ .quizContainer {
+    margin: auto;
+    padding-top: 5px;
+}
+.question {
+    font-size: 20px;
+    height: auto;
+    margin: auto;
+    border-radius: 6px;
+    background-color: lightgrey;
+}
+.quizMessage {
+    background-color: #A52A2A;
+    border-radius: 6px;
+    margin: auto;
+    padding: 2px;
+    color: red;
+}
+.choiceList {
+    color: #800000;
+}
+.result {
+    height: auto;
+    border-radius: 6px;
+    background-color: linen;
+    margin: auto;
+    text-align: center;
+}
+.timeLeft {
+    font-size:20px;
+    font-weight: bold;
+}
+.my-jumbotron {
+    width:25%;
+}

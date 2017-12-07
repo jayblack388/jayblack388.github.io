@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Giphy API Project</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/gifstyles.css">
+</head>
+<body>
+	<nav class="navbar navbar-default bg-secondary navbar-fixed-top">
+	  <div class="container-fluid">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="nav navbar-brand" href="../index.html">John Blackwell</a>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+	      
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="../index.html">About Me</a></li>
+	        <li><a href="./contact.html">Contact</a></li>
+	        <li class="dropdown">
+	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="./portfolio.html">Portfolio</a></li>
+	            <li role="separator" class="divider"></li>
+				<li><a href="./project-1.html">Project 1</a></li>
+	            <li><a href="./project-2.html">Project 2</a></li>
+	            <li><a href="./project-3.html">Project 3</a></li>
+	            <li><a href="./project-4.html">Project 4</a></li>
+	            <li><a href="./project-5.html">Project 5</a></li>
+	            <li><a href="./project-6.html">Project 6</a></li>
+	            <li role="separator" class="divider"></li>
+	            <li><a href="https://jayblack388.github.io/Basic-Portfolio/index.html">This site before Bootstrap</a></li>
+	          </ul>
+	        </li>
+	      </ul>
+	    </div><!-- /.navbar-collapse -->
+	  </div><!-- /.container-fluid -->
+	</nav>
+
+	<div class="container content">
+		<div class="jumbotron bg-cadet">
+			<h1 class="text-center">Giphy API Project</h1>
+		</div>
+		<div class="row">
+
+			<div class="col-md-8">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+							<h3 class="panel-title text-center">Search Buttons</h3>
+						</div>	
+
+					<div class="panel-body">
+						<div class="btn-group btn-group-lg">
+							<!-- Rendered Buttons dump here -->
+							<div id="searchBtns"></div>
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">	
+				<div class="panel panel-default">
+
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">Search Parameters</h3>
+					</div>
+
+					<div class="panel-body">
+						<form id="searchForm" role="form">
+
+							<div class="row">
+								<div class="col-sm-2"></div>
+								<div class="col-sm-8 form-group">
+									<label for='searchInput'>Add a new Search Button</label>
+									<input type="text" id="searchInput">
+								</div>
+								<div class="col-sm-2"></div>
+							</div>
+							
+							<div class="row">	
+								<div class="col-sm-6 form-group">	
+									<label for="numRecords"># of Results</label>
+									<select class="form-control" id="numRecords">
+										<option value="5">5</option>
+										<option value="10">10</option>
+										<option value="25">25</option>
+									</select>
+								</div>
+
+								<div class="col-sm-6 form-group">	
+									<label for="numRecords">Rating</label>
+									<select class="form-control" id="ratingRecord">
+										<option value="null">All</option>
+										<option value="y">Y</option>
+										<option value="g">G</option>
+										<option value="pg">PG</option>
+										<option value="pg-13">PG-13</option>
+										<option value="r">R</option>
+									</select>
+								</div>
+							</div>
+								
+							<input type="submit" value="Add a Gif" id="addGif">
+
+						</form>
+					</div>
+
+				</div>
+			</div>	
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title text-center">Gif Results Returned Below</h3>
+					</div>
+					<div class="panel-body">
+						<div id="gifView"></div>
+					</div>
+				</div>
+			</div>	
+		</div>	
+	</div>
+
+
+
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.js"
+	  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	  crossorigin="anonymous"></script>
+	<!-- Bootstrap jQuery -->
+	<script 
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+	<!-- logic sheet -->
+	<script src="../assets/javascript/gifjavascript.js"></script>
+</body>
+</html>

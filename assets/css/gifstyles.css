@@ -1,0 +1,25 @@
+.thumbnail {
+	height:250px;
+}
+.bg-secondary {
+	background-color: #868e96;
+}
+.nav.navbar-nav.navbar-right li a {
+    color: #f2ecdf;
+    font-size: 16px;
+    padding-right: 10px
+    padding-left:10px;
+}
+.nav.navbar-nav.navbar-right li ul a {
+    color: #868e96;
+}
+.nav.navbar-brand {
+	color: #f2ecdf;
+	font-size: 20px;
+}
+.navbar {
+	padding:3px;
+}
+.content {
+	margin-top:80px;
+}

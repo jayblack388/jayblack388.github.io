@@ -1,0 +1,10 @@
+body {
+	background: url(../images/caveBackground.jpg) center;
+}
+.crystals {
+	width:200px;
+	height:200px;
+}
+#randomnumber-scoreboard {
+	background-color: #00695c;
+}

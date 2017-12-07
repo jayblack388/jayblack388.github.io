@@ -1,0 +1,19 @@
+body {
+	background-image: url(../images/organic_tiles.png)
+}
+.logo {
+	height:auto;
+	width:auto;
+}
+#myside {
+	top:60px;
+}
+.container {
+	margin-bottom: 65px
+}
+.col-md-6 {
+	margin-bottom:20px;
+}
+.bg-cadet {
+	background-color: cadetblue;
+}
