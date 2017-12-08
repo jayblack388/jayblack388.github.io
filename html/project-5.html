@@ -16,7 +16,7 @@
 	<div class="container">
 		<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-secondary">
 
-	  <a class="navbar-brand text-light" href="../index.html">John Blackwell</a>
+	  <a class="navbar-brand text-light" href="./index.html">John Blackwell</a>
 
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
@@ -28,15 +28,15 @@
 
 	    <ul class="navbar-nav ml-auto">
 
-	      <li class="nav-item active">
+	      <li class="nav-item">
 
-	        <a class="nav-link text-light" href="../index.html">About Me<span class="sr-only">(current)</span></a>
+	        <a class="nav-link text-light" href="./index.html">About Me</a>
 
 	      </li>
 
-	      <li class="nav-item">
+	      <li class="nav-item active">
 
-	        <a class="nav-link text-light" href="./contact.html">Contact</a>
+	        <a class="nav-link text-light" href="./contact.html">Contact<span class="sr-only">(current)</span></a>
 
 	      </li>
 
@@ -51,17 +51,17 @@
 
 	          <div class="dropdown-divider"></div>	
 
-	          <a class="dropdown-item text-secondary" href="./project-1.html">Project 1</a>
+	          <a class="dropdown-item text-secondary" title="Psychic Game" href="./project-1.html">Project 1</a>
 
-	          <a class="dropdown-item text-secondary" href="./project-2.html">Project 2</a>
+	          <a class="dropdown-item text-secondary" title="Crystal Collectors" href="./project-2.html">Project 2</a>
 
-	          <a class="dropdown-item text-secondary" href="./project-3.html">Project 3</a>
+	          <a class="dropdown-item text-secondary" title="Web Safe Font Previewer" href="./project-3.html">Project 3</a>
 	          
-	          <a class="dropdown-item text-secondary" href="./project-4.html">Project 4</a>
+	          <a class="dropdown-item text-secondary" title="ASOIAF Trivia Quiz" href="./project-4.html">Project 4</a>
 
-	          <a class="dropdown-item text-secondary" href="./project-5.html">Project 5</a>
+	          <a class="dropdown-item text-secondary" title="Rock, Paper, Scissors" href="./project-5.html">Project 5</a>
 
-	          <a class="dropdown-item text-secondary" href="./project-6.html">Project 6</a>
+	          <a class="dropdown-item text-secondary" title="Giphy API App" href="./project-6.html">Project 6</a>
 
 	          <div class="dropdown-divider"></div>
 
@@ -77,78 +77,89 @@
 
 		</nav>
 	</div>
+	<div class="container">
+		<div class="jumbotron bg-cadet text-center text-dark">
+			<h1>Rock, Paper, Scissors VS Computer</h1>
+			<h5>There may be some other options...</h5>
+		</div>
+	</div>
 
-
+<!-- footer -->
 	<div class="container-fluid bg-secondary text-center" style="padding:20px">
 		<footer class="footer">
 			<span class="text-light text-weight-bold">John Blackwell &#169 2017</span>
 		</footer>
 	</div>	
-
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.js"
+	  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+	  crossorigin="anonymous"></script>
 	<script type="text/javascript">
-		const getUserChoice = userInput =>{
-		  userInput = userInput.toLowerCase();
-		  if (userInput === 'rock'|| userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb'){
-		    return userInput
-		  }
-		  else {
-		    console.log ('Did not pick rock, paper, or scissors');
-		  }
-		}
-		const getComputerChoice = () =>{
-		 let randomNumber = Math.floor(Math.random() * 3);
-		  switch (randomNumber){
-		    case 0:
-		      return 'rock';
-		      break;
-		    case 1:
-		      return 'paper';
-		      break;
-		    case 2:
-		      return 'scissors';
-		      break;
-		  }
-		};
-		const determineWinner = (userChoice,computerChoice) => {
-		  if (userChoice === 'bomb'){
-		    return 'Kaboom!!!! Player wins and breaks the game!!!'
-		  }
-		  if (userChoice === computerChoice){
-		      return 'The game was a tie!'
-		  }
-		  if (userChoice === 'rock'){
-		    if (computerChoice === 'scissors'){
-		      return 'You Win!'
-		    }
-		    else {
-		      return 'The Computer Wins!'
-		    }
-		  }
-		  if (userChoice === 'paper'){
-		    if (computerChoice === 'rock'){
-		      return 'You Win!'
-		    }
-		    else {
-		      return 'The Computer Wins!'
-		    }
-		  }
-		  if (userChoice === 'scissors'){
-		    if (computerChoice === 'paper'){
-		      return 'You Win!'
-		    }
-		    else {
-		      return 'The Computer Wins!'
-		    }
-		  }
-		}
-		const playGame = () =>{
-		  let userChoice = getUserChoice(prompt('Rock, Paper, or Scissors?'));
-		  alert('The player picks ' + userChoice + '.');
-		  let computerChoice = getComputerChoice();
-		  alert('The computer picks ' + computerChoice +'.');
-		  alert(determineWinner(userChoice,computerChoice))
-		}
-		playGame()
+		$(document).ready(function(){
+			const getUserChoice = userInput =>{
+			  userInput = userInput.toLowerCase();
+			  if (userInput === 'rock'|| userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb'){
+			    return userInput
+			  }
+			  else {
+			    console.log ('Did not pick rock, paper, or scissors');
+			  }
+			}
+			const getComputerChoice = () =>{
+			 let randomNumber = Math.floor(Math.random() * 3);
+			  switch (randomNumber){
+			    case 0:
+			      return 'rock';
+			      break;
+			    case 1:
+			      return 'paper';
+			      break;
+			    case 2:
+			      return 'scissors';
+			      break;
+			  }
+			};
+			const determineWinner = (userChoice,computerChoice) => {
+			  if (userChoice === 'bomb'){
+			    return 'Kaboom!!!! Player wins and breaks the game!!!'
+			  }
+			  if (userChoice === computerChoice){
+			      return 'The game was a tie!'
+			  }
+			  if (userChoice === 'rock'){
+			    if (computerChoice === 'scissors'){
+			      return 'You Win!'
+			    }
+			    else {
+			      return 'The Computer Wins!'
+			    }
+			  }
+			  if (userChoice === 'paper'){
+			    if (computerChoice === 'rock'){
+			      return 'You Win!'
+			    }
+			    else {
+			      return 'The Computer Wins!'
+			    }
+			  }
+			  if (userChoice === 'scissors'){
+			    if (computerChoice === 'paper'){
+			      return 'You Win!'
+			    }
+			    else {
+			      return 'The Computer Wins!'
+			    }
+			  }
+			}
+			const playGame = () =>{
+			  let userChoice = getUserChoice(prompt('Rock, Paper, or Scissors?'));
+			  alert('The player picks ' + userChoice + '.');
+			  let computerChoice = getComputerChoice();
+			  alert('The computer picks ' + computerChoice +'.');
+			  alert(determineWinner(userChoice,computerChoice))
+			}
+			playGame()
+		});	
 	</script>
 	<!-- Bootstrap jQuery -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
