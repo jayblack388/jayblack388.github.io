@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Train Schedule</title>
+  <!--JS Addons -->
+    <!-- jQuery -->
+    <script 
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--   moment -->
+    <script 
+    src="https://cdn.jsdelivr.net/npm/moment@2.19.3/moment.js"></script>
+    <!-- Firebase Reference -->
+    <script 
+    src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+  <!--CSS links -->
+    <!-- bootstrap -->
+    <link 
+    rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" 
+    crossorigin="anonymous">
+    <link 
+    href="https://fonts.googleapis.com/css?family=Krona+One" 
+    rel="stylesheet">
+    <!-- css  -->
+    <link 
+    rel="stylesheet" 
+    type="text/css" 
+    href="../assets/css/style.css">
+    <link 
+    rel="stylesheet" 
+    type="text/css" 
+    href="../assets/css/trainstyles.css">
+</head>
+<body>
+<!--  Navbar -->
+  <div class="container">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-secondary">
+
+    <a class="navbar-brand text-light" href="../index.html">John Blackwell</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav ml-auto">
+
+        <li class="nav-item">
+
+          <a class="nav-link text-light" href="./index.html">About Me</a>
+
+        </li>
+
+        <li class="nav-item active">
+
+          <a class="nav-link text-light" href="./contact.html">Contact<span class="sr-only">(current)</span></a>
+
+        </li>
+
+         <li class="nav-item dropdown">
+
+          <a class="nav-link dropdown-toggle text-light" href="./portfolio.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+        <a class="dropdown-item text-secondary" href="./portfolio.html">Portfolio</a>
+
+            <div class="dropdown-divider"></div>  
+
+            <a class="dropdown-item text-secondary" title="Psychic Game" href="./project-1.html">Project 1</a>
+
+            <a class="dropdown-item text-secondary" title="Crystal Collectors" href="./project-2.html">Project 2</a>
+
+            <a class="dropdown-item text-secondary" title="Web Safe Font Previewer" href="./project-3.html">Project 3</a>
+            
+            <a class="dropdown-item text-secondary" title="ASOIAF Trivia Quiz" href="./project-4.html">Project 4</a>
+
+            <a class="dropdown-item text-secondary" title="Rock, Paper, Scissors" href="./project-5.html">Project 5</a>
+
+            <a class="dropdown-item text-secondary" title="Giphy API App" href="./project-6.html">Project 6</a>
+
+            <a class="dropdown-item text-secondary" title="Tacky Train Tracker" href="./project-7.html">Project 7</a>
+
+            <a class="dropdown-item text-secondary" title="Placeholder" href="./project-8.html">Project 8</a>
+
+            <div class="dropdown-divider"></div>
+
+            <a class="dropdown-item text-secondary" href="https://jayblack388.github.io/Basic-Portfolio/index.html">This site before Bootstrap</a>
+
+          </div>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+    </nav>
+  </div>
+<div class="container">
+<!-- Title in Jumbotron -->
+  <div class="jumbotron bg-info text-center border-info" id="top">
+    <div class="container" id="banner">
+      <h1 class="display-3">Train Schedule App</h1>
+      <hr class="my-4">
+      <p class="lead">Add and Watch Scheduled Trains Below</p>
+    </div>
+  </div>
+<!-- Train Schedule Table -->
+  <div class="wrapper">
+    <div class="container">
+      <div class="card border-info">
+        <div class="card-header bg-info font-weight-bold" id="cardTitle">
+          Trains Scheduled
+        </div>
+        <div class="card-body">
+          <table class="table table-hover table-striped text-center">
+            <thead>
+              <tr>
+                <th scope="col">Train Name</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Run Frequency (mins)</th>
+                <th scope="col">Next Departure</th>
+                <th scope="col">Minutes Away</th>
+              </tr>
+            </thead>
+            <tbody id="dataWrapper">
+              
+            </tbody>
+          </table>
+        </div>  
+      </div>
+    </div>
+  </div>
+  <!-- Train adding form -->
+  <div class="container" id="addTrain">
+    <div class="card border-info ">
+      <div class="card-header bg-info font-weight-bold" id="form-id">
+        Add a Train
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <label for="trainName">Train Name</label>
+          <input type="text" class="form-control" id="trainName">
+        </div>
+        <div class="form-group">
+          <label for="destination">Destination</label>
+          <input type="text" class="form-control" id="destination">
+        </div>
+        <div class="form-group">
+          <label for="firstTrain">First Departure</label>
+          <input type="time" class="form-control" id="firstTrain">
+        </div>
+        <div class="form-group">
+          <label for="runFrequency">Run Frequency (mins)</label>
+          <input type="number" class="form-control" id="runFrequency">
+        </div>
+        <hr class="my-4">
+        <div class="text-center">
+          <button id="submitButton" class="btn btn-info btn-lg btn-hover">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<!--  Footer -->
+  <div class="container-fluid bg-secondary text-center" style="padding:20px">
+    <footer class="footer">
+      <span class="text-light text-weight-bold">John Blackwell &#169 2017</span>
+    </footer>
+  </div>    
+<!--link to my java script -->
+  <script 
+  type="text/javascript" src="../assets/javascript/trainjs.js"></script> 
+</body>
+</html>
